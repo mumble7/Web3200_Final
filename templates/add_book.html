@@ -1,0 +1,37 @@
+{% extends "flask_user_layout.html" %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{{ url_for('home') }}"></a>Home</li>
+    <li class="breadcrumb-item active">All Books</li>
+{% endblock %}
+
+{% block page_content %}
+
+    {% if book_title != '' %}
+        <h3>The book named "{{ book_title }}" has been added to the database!</h3>
+    {% else %}
+        <div class="container">
+            <form method="post">
+                <div class="form-group">
+                    <label>Author</label>
+                    <input type="text" class="form-control" name="author" required placeholder="James Allen">
+                </div>
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" class="form-control" name="title" required placeholder="As a Man Thinketh">
+                </div>
+                <div class="form-group">
+                    <label>Description</label>
+                    <input type="text" class="form-control" name="description" required placeholder="A strong man cannot help a weaker
+                         unless the weaker is willing to be helped, and even then the weak man must become strong of himself; he must,
+                         by his own efforts, develop the strength which he admires in another.">
+                </div>
+
+                <div>
+                    <input type="submit">
+                </div>
+            </form>
+        </div>
+    {% endif %}
+
+{% endblock %}

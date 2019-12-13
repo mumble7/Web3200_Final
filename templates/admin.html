@@ -1,0 +1,18 @@
+{% extends "flask_user_layout.html" %}
+
+{% block breadcrumb %}
+    <li class="breadcrumb-item"><a href="{{ url_for('home') }}"></a>Home</li>
+    <li class="breadcrumb-item active">All Books</li>
+{% endblock %}
+
+{% block page_content %}
+
+    <ul>
+        <li><a href="{{ url_for('seedDB') }}">Seed Books in Database</a></li>
+        <li><a href="{{ url_for('eraseDB') }}">Erase Books in Database</a></li>
+{#    {{ url_for('seedDB') }}
+      {{ url_for('eraseDB') }}
+#}
+    </ul>
+
+{% endblock %}
